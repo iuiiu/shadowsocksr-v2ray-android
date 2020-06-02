@@ -146,7 +146,6 @@ object ConfigUtils {
       |server {
       | label = "local-server";
       | ip = 127.0.0.1;
-      | query_method = tcp_only;
       | port = %d;
       | reject = %s;
       | reject_policy = negate;
@@ -169,7 +168,6 @@ object ConfigUtils {
         | ip = %s;
         | port = %d;
         | timeout = 3;
-        | query_method = udp_only;
         | %s
         | policy = included;
         | reject = %s;
@@ -186,7 +184,6 @@ object ConfigUtils {
       | timeout = 5;
       | proxy_only=on;
       | lean_query=on;
-      | query_method = udp_only;
       | policy = included;
       | reject_policy = fail;
       | reject_recursively = on;

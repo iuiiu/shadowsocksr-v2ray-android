@@ -182,6 +182,15 @@ class ShadowsocksVpnService extends VpnService with BaseService {
       proxychains_enable = false
     }
 
+    val pdnsCache = new File(getApplicationInfo.dataDir + "/pdnsd.cache")
+    if (!pdnsCache.exists()) {
+      try {
+        pdnsCache.createNewFile()
+      } catch {
+        case e: Exception =>
+      }
+    }
+
     val dnsConf = profile.getDNSConf()
     dns_address = dnsConf._1
     dns_port = dnsConf._2
